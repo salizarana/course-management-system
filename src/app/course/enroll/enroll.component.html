@@ -1,0 +1,23 @@
+<h2>Enrolled Students</h2>
+
+<table
+  *ngIf="enrollments.length > 0"
+  border="1"
+  cellpadding="8"
+  cellspacing="0"
+>
+  <tr>
+    <th>Course</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Message</th>
+  </tr>
+  <tr *ngFor="let e of enrollments">
+    <td>{{ e.course.title }}</td>
+    <td>{{ e.name }}</td>
+    <td>{{ e.email }}</td>
+    <td>{{ e.message }}</td>
+  </tr>
+</table>
+
+<p *ngIf="enrollments.length === 0">No enrollments yet.</p>

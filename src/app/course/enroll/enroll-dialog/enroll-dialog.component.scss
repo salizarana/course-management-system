@@ -1,0 +1,13 @@
+/* Kill scroll and overflow in mat-dialog-content */
+.enroll-dialog-panel .mat-dialog-container {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  
+  /* Target the actual generated mat-dialog-content */
+  .enroll-dialog-panel .mat-dialog-content {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  

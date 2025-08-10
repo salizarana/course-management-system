@@ -1,0 +1,31 @@
+<div class="course-detail" *ngIf="course">
+  <img class="hero-image" [src]="course.image" />
+  <h1>{{ course.title }}</h1>
+  <h3>Instructor: {{ course.instructor }}</h3>
+  <p>{{ course.description }}</p>
+
+  <mat-divider></mat-divider>
+
+  <section>
+    <h2>Course Curriculum</h2>
+    <ul>
+      <li
+        *ngFor="
+          let topic of [
+            'Introduction',
+            'Components',
+            'Routing',
+            'Services',
+            'Forms'
+          ]
+        "
+      >
+        {{ topic }}
+      </li>
+    </ul>
+  </section>
+
+  <button mat-raised-button color="accent" (click)="openEnrollDialog(course)">
+    Enroll Now
+  </button>
+</div>

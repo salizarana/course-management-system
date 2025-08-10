@@ -1,0 +1,33 @@
+<mat-toolbar class="navbar">
+  <button (click)="drawer.toggle()" mat-icon-button aria-label="Toggle menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div class="title" (click)="dashboard()">Course Management System</div>
+
+  <span class="spacer"></span>
+
+  <button (click)="logout()" mat-icon-button>
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-drawer-container class="drawer-container" autosize>
+  <mat-drawer #drawer class="drawer" mode="side" opened>
+    <mat-nav-list>
+      <a
+        mat-list-item
+        *ngFor="let item of navigationList"
+        [routerLink]="item.url"
+        routerLinkActive="active"
+      >
+        <mat-icon class="nav-icon">{{ item.icon }}</mat-icon>
+        <span class="nav-text">{{ item.name }}</span>
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

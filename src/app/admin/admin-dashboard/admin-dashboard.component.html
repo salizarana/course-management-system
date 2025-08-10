@@ -1,0 +1,26 @@
+<!-- admin-dashboard.component.html -->
+<h2>Welcome to Admin Dashboard</h2>
+
+<div class="cards">
+  <div class="card" (click)="navigateTo('navigation/course/course-list')">
+    <h4>All Courses</h4>
+    <p>{{ courses }} total</p>
+  </div>
+
+  <div class="card" (click)="navigateTo('navigation/enroll')">
+    <h4>Enrollments</h4>
+    <p>{{ students }} students enrolled</p>
+  </div>
+
+  <div class="card" (click)="navigateTo('navigation/review')">
+    <h4>Course Reviews</h4>
+    <p>{{ instructors }} instructors</p>
+  </div>
+</div>
+
+<section class="recent-activity">
+  <h3>Recent Activities</h3>
+  <ul>
+    <li *ngFor="let activity of recentActivities">{{ activity }}</li>
+  </ul>
+</section>
