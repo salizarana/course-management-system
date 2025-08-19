@@ -38,7 +38,7 @@ export class GoogleAnalyticsService {
 
   setUserProperty(name: string, value: any) {
     if (typeof gtag === 'function') {
-      gtag('set', { [name]: value });
+      gtag('set', 'user_properties', { [name]: value });
     }
   }
 }
