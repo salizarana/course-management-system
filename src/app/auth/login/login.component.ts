@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   adminList: any[] = [
-    { userId: 1, userName: 'admin', password: 'admin123', userType: 'admin' },
+    { userId: 1, userName: 'admin', password: 'admin123@', userType: 'admin' },
   ];
 
   userList: any[] = [
@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
 
         this.gaService.setUserProperty('user_role', user.userType);
 
-        this.gaService.trackEvent('login', { user_role: user.userType });
+        this.gaService.trackEvent('login');
 
         this.router.navigate(['navigation', 'admin-dashboard']);
       } else if (customer) {
@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
 
         this.gaService.setUserProperty('user_role', customer.userType);
 
-        this.gaService.trackEvent('login', { user_role: customer.userType });
+        this.gaService.trackEvent('login');
 
         this.router.navigate(['user-dashboard']);
       } else {
