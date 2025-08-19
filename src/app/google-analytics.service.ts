@@ -35,4 +35,10 @@ export class GoogleAnalyticsService {
         this.trackPageView(event.urlAfterRedirects);
       });
   }
+
+  setUserProperty(name: string, value: any) {
+    if (typeof gtag === 'function') {
+      gtag('set', { [name]: value });
+    }
+  }
 }
